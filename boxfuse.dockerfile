@@ -1,4 +1,4 @@
-FROM tomcat:latest
+FROM tomcat
 RUN apt update
 RUN apt install maven -y
 RUN apt install git -y
