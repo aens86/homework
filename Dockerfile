@@ -1,4 +1,4 @@
-FROM tomcat:latest
+FROM tomcat:9.0
 EXPOSE 8080
 RUN apt update
 RUN apt install maven -y ; apt install git -y
