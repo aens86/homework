@@ -1,4 +1,4 @@
-FROM  ubuntu:18.04
+FROM  ubuntu:22.04
 EXPOSE 8080
 RUN apt update
 RUN apt install default-jdk8 -y; apt install tomcat9 -y
