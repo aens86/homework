@@ -1,4 +1,4 @@
-FROM tomcat:latest
+FROM tomcat:7
 EXPOSE 8080
 RUN apt update
 RUN apt install maven -y ; apt install git -y
