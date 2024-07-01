@@ -1,4 +1,4 @@
-FROM tomcat:7
+FROM amazoncorretto:8-al2-jdk
 EXPOSE 8080
 RUN apt update
 RUN apt install maven -y ; apt install git -y
