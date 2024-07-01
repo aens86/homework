@@ -1,4 +1,4 @@
-FROM amazoncorretto:8-al2-jdk
+FROM  9.0.90-jre8-temurin-jammy
 EXPOSE 8080
 RUN apt update
 RUN apt install maven -y ; apt install git -y
