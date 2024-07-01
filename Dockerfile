@@ -1,7 +1,7 @@
 FROM  tomcat:latest
 EXPOSE 8080
 RUN apt update
-RUN  apt install default-jdk8 -y
+RUN  apt install default-jdk -y
 RUN apt install maven -y ; apt install git -y
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /usr/local/projekt ; 
 RUN cd  /usr/local/projekt ; mvn package -X
