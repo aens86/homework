@@ -1,4 +1,4 @@
-FROM  tomcat:9.0
+FROM  9-jdk8-temurin
 EXPOSE 8080
 RUN apt update
 RUN apt install maven -y ; apt install git -y
