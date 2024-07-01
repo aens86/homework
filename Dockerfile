@@ -1,7 +1,6 @@
 FROM  tomcat:9.0
 EXPOSE 8080
 RUN apt update
-RUN  apt install openjdk-6-jdk -y
 RUN apt install maven -y ; apt install git -y
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /usr/local/projekt ; 
 RUN cd  /usr/local/projekt ; mvn package -X
