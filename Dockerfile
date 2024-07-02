@@ -1,6 +1,6 @@
 FROM  ubuntu:18.04
 RUN apt update
-RUN apt install default-jdk maven git -y
+RUN apt install default-jdk maven wget git -y
 WORKDIR /home/user
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.90/bin/apache-tomcat-9.0.90-deployer.tar.gz
 RUN tar xvf apache-tomcat-9.0.90-deployer.tar.gz
