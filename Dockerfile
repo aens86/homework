@@ -1,8 +1,13 @@
-FROM  tomcat:9.0
-EXPOSE 8080
+FROM  ubuntu:18.04
 RUN apt update
-RUN apt install maven -y ; apt install git -y
-RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /usr/local/projekt ; 
-RUN cd  /usr/local/projekt ; mvn versions:update-parent ; mvn package -X
-RUN cp /usr/local/tomcat/projekt/target/hello-1.0.war /var/lib/tomcat/webapps/
-CMD ["catalina.sh", "run"]
+RUN apt install default-jdk maven git -y
+WORKDIR /home/test3006
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.90/bin/apache-tomcat-9.0.90-deployer.tar.gz
+RUN tar xvf apache-tomcat-9.0.90-deployer.tar.gz
+RUN mv apache-tomcat-9.0.90-deployer.tar.gz /opt/tomcat
+ENV CATALINA_HOME /opt/tomcat
+ENV PATH $CATALINA_HOME/bin:$PATH
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /home/aens/hw  
+RUN  cd   home/aens/hw ; mvn package -X
+RUN cp /home/aens/hw/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/tomcat/webapps/
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
