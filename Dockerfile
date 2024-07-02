@@ -2,9 +2,9 @@ FROM  ubuntu:18.04
 RUN apt update
 RUN apt install default-jdk maven wget git -y
 WORKDIR /home/user
-RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.90/bin/apache-tomcat-9.0.90-deployer.tar.gz
-RUN tar xvf apache-tomcat-9.0.90-deployer.tar.gz
-RUN mv apache-tomcat-9.0.90-deployer /opt/tomcat
+RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.tar.gz
+RUN tar -zxvf apache-tomcat-9.0.45.tar.gz
+RUN mv apache-tomcat-9.0.45 /opt/tomcat
 ENV CATALINA_HOME /opt/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 EXPOSE 8080
