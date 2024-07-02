@@ -8,7 +8,8 @@ RUN mv apache-tomcat-9.0.90-deployer /opt/tomcat
 ENV CATALINA_HOME /opt/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git 
-WORKDIR home/user/boxfuse-sample-java-war-hello 
+
+WORKDIR /home/user/boxfuse-sample-java-war-hello
 RUN mvn package -X
 RUN cp /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/tomcat/webapps/
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
